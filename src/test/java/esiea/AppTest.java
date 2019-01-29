@@ -1,38 +1,19 @@
 package esiea;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+//import junit.framework.Test;
+//import junit.framework.TestCase;
+//import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class @Test 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public @Test( String testName )
-    {
-        super( testName );
-    }
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static @Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+import org.junit.jupiter.api.Test;
+import org.assertj.core.api.Assertions;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
+class AppTest {
+
+    @Test
+    void myFirstTest() {
         Assertions.assertThat(true).isTrue();
     }
+
 }
