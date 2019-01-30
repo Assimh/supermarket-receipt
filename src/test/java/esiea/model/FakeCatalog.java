@@ -1,5 +1,6 @@
 package esiea;
 
+import esiea.model.*;
 import java.util.HashMap;
 import java.util.Map;
 
