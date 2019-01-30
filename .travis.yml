@@ -1,6 +1,10 @@
 language: java
 sudo: false # faster builds
 
+env:
+   - CODECOV_TOKEN="e181ea9d-65aa-4cd9-a1ac-725a6fe5624c"
+
+
 script: "mvn cobertura:cobertura"
 
 after_success:
