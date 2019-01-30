@@ -1,4 +1,4 @@
-package dojo.supermarket.model;
+package esiea.model;
 
 public class Discount {
     private final String description;

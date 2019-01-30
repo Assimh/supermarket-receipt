@@ -1,4 +1,4 @@
-package dojo.supermarket.model;
+package esiea.model;
 
 public interface SupermarketCatalog {
     void addProduct(Product product, double price);

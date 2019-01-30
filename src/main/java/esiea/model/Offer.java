@@ -1,4 +1,4 @@
-package dojo.supermarket.model;
+package esiea.model;
 
 public class Offer {
     SpecialOfferType offerType;

@@ -1,4 +1,4 @@
-package dojo.supermarket.model;
+package esiea.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package dojo.supermarket.model;
+package esiea.model;
 
 public class ProductQuantity {
     private final Product product;
