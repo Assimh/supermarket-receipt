@@ -3,6 +3,8 @@ package esiea;
 import esiea.model.*;
 import org.junit.jupiter.api.Test;
 
+import org.assertj.core.api.Assertions;
+
 public class SupermarketTest {
 
     @Test
@@ -22,5 +24,7 @@ public class SupermarketTest {
         Receipt receipt = teller.checksOutArticlesFrom(cart);
 
         // Todo: complete this test
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(4.975);
     }
 }
