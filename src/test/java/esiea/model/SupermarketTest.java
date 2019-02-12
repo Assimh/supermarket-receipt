@@ -27,4 +27,25 @@ public class SupermarketTest {
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(4.975);
     }
+
+    //Test ThreeForTwo
+
+    @Test
+     public void testThreeForTwo() {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        catalog.addProduct(apples, 1.99);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItemQuantity(apples, 3);
+
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.ThreeForTwo, apples, 0);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(3.98);
+
+     }
 }
