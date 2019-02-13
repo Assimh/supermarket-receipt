@@ -66,6 +66,26 @@ public class SupermarketTest {
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(1.791);
 
+     }
+
+     @Test
+     //Test TwoForAmount
+     public void TwoForAmount () {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        catalog.addProduct(apples, 1.99);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItemQuantity(apples, 2.0);
+
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.TwoForAmount, apples, 1.99);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(1.99);
+
 
      }
 }
