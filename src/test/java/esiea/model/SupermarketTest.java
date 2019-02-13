@@ -107,4 +107,23 @@ public class SupermarketTest {
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(4.0);
 
      }
+
+     @Test
+     //Test NoDiscount
+     public void testNoDiscount () {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        catalog.addProduct(apples, 1.99);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItemQuantity(apples, 2);
+
+        Teller teller = new Teller(catalog);
+      
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(3.98);
+
+     }
 }
