@@ -86,6 +86,25 @@ public class SupermarketTest {
 
         Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(1.99);
 
+     }
+
+     @Test
+     //Test FiveForAmount
+     public void testFiveForAmount () {
+
+        SupermarketCatalog catalog = new FakeCatalog();
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        catalog.addProduct(apples, 1.99);
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItemQuantity(apples, 5.0);
+
+        Teller teller = new Teller(catalog);
+        teller.addSpecialOffer(SpecialOfferType.FiveForAmount, apples, 4.0);
+
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        Assertions.assertThat(receipt.getTotalPrice()).isEqualTo(4.0);
 
      }
 }
