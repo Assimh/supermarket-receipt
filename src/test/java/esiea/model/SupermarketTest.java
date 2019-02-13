@@ -49,7 +49,6 @@ public class SupermarketTest {
      }
 
      //Test TenPercentDiscount
-
      @Test
      public void testTenPercentDiscount() {
 
