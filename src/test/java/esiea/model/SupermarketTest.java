@@ -57,7 +57,7 @@ public class SupermarketTest {
         catalog.addProduct(apples, 1.99);
 
         ShoppingCart cart = new ShoppingCart();
-        cart.addItemQuantity(apples, 1);
+         cart.addItem(apples);
 
         Teller teller = new Teller(catalog);
         teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, apples, 10);
