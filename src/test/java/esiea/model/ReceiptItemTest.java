@@ -47,4 +47,17 @@ public class ReceiptItemTest {
         List<ReceiptItem> expectedList = new ArrayList();
         Assertions.assertThat(receipt.getItems()).isEqualTo(expectedList);
     }
+
+     @Test
+    public void getDiscountsTest(){
+        SupermarketCatalog catalog = new FakeCatalog();
+        ShoppingCart cart = new ShoppingCart();
+
+        Teller teller = new Teller(catalog);
+        Receipt receipt = teller.checksOutArticlesFrom(cart);
+
+        List<Discount> expectedList = new ArrayList<>();
+        Assertions.assertThat(receipt.getItems()).isEqualTo(expectedList);
+    }
+
 }
