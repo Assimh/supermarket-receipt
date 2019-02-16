@@ -39,6 +39,7 @@ public class ReceiptPrinterTest {
       ShoppingCart cart = new ShoppingCart();
       cart.addItemQuantity(apples, 2);
       cart.addItemQuantity(orange, 2);
+      cart.addItemQuantity(apples, 1);
 
       Teller teller = new Teller(catalog);
       teller.addSpecialOffer(SpecialOfferType.TwoForAmount, orange, 1.99);
@@ -51,9 +52,10 @@ public class ReceiptPrinterTest {
       +"  1.50 * 2.000\n"
       +"orange                              3.98\n"
       +"  1.99 * 2.000\n"
+      +"apples                              1.50\n"
       +"2 for 1.99(orange)                 -1.99\n"
       +"\n"
-      +"Total:                              4.99";
+      +"Total:                              6.49";
 
       Assertions.assertThat(line).isEqualTo(receiptprinter.printReceipt(receipt));
    }
