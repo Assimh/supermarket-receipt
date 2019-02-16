@@ -8,10 +8,15 @@ public class OfferTest {
 
  
  @Test
-    public void offertest(){
-        Product apples = new Product("apples", ProductUnit.Each);
-        Offer My_offer = new Offer(SpecialOfferType.TenPercentDiscount, apples, 1.99);
+	public void TestMethodGetProduct() {
+		Product apples = new Product("apples", ProductUnit.Kilo);
+		Offer Myoffer = new Offer(SpecialOfferType.TenPercentDiscount, apples, 1.99);
+        
+		Assertions.assertThat(Myoffer.getProduct().getName()).isEqualTo("apples");
 
-        Assertions.assertThat(My_offer.getProduct()).isEqualTo(apples);
-    }
+		Assertions.assertThat(Myoffer.getProduct().getName()).isNotEmpty();
+
+		Assertions.assertThat(Myoffer.getProduct().getName()).isNotEqualTo("toothbrush");
+
+	}
 }
