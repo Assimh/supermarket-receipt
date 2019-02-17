@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCartTest {
-
- @Test
+/*
+@Test
 public void getItems() {
         ShoppingCart shoppingCart = new ShoppingCart();
         Product apples = new Product("apples", ProductUnit.Kilo);
@@ -18,5 +18,5 @@ public void getItems() {
         Assertions.assertThat(shoppingCart.getItems()).isEqualTo(toast);
         
 }
-
+*/
 }
