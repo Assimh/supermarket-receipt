@@ -1,10 +1,11 @@
 package esiea.model;
 
 import org.junit.jupiter.api.Test;
-import esiea.ReceiptPrinter;
+import esiea.model.ReceiptItem;
 import org.assertj.core.api.Assertions;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ReceiptItemTest {
 
@@ -56,5 +57,14 @@ public class ReceiptItemTest {
         Assertions.assertThat(receiptItem.equals(receiptItem4)).isEqualTo(false);
         Assertions.assertThat(receiptItem.equals(receiptItem5)).isEqualTo(true);
 
+    }
+
+    @Test
+    public void hashCodeTest(){
+        Product apples = new Product("apples",ProductUnit.Kilo);
+
+        ReceiptItem receiptItem = new ReceiptItem(apples, 2.0, 1.99, 3.98);
+
+        Assertions.assertThat(receiptItem.hashCode()).isEqualTo(Objects.hash(apples, 1.99, 3.98, 2.0));
     }
 }
