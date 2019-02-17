@@ -57,4 +57,26 @@ public class ProductTest {
         Assertions.assertThat(apples.hashCode()).isEqualTo(Objects.hash("apples", ProductUnit.Kilo));
     }
 
+        
+    @Test
+    public void testgetProduct(){
+
+        Product apples = new Product("apples", ProductUnit.Kilo);
+
+        ProductQuantity applesQuantity = new ProductQuantity(apples, 2.5);
+        
+        Assertions.assertThat(applesQuantity.getProduct()).isEqualTo(apples);
+    }
+
+    @Test
+    public void testgetQuantity(){
+
+        Product apples = new Product("apples", ProductUnit.Kilo);
+
+        ProductQuantity applesQuantity = new ProductQuantity(apples, 2.5);
+
+        Assertions.assertThat(applesQuantity.getQuantity()).isEqualTo(2.5);
+    }
+
+
 }
