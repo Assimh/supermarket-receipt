@@ -57,6 +57,8 @@ public class ReceiptItemTest {
         Assertions.assertThat(receiptItem.equals(receiptItem4)).isEqualTo(false);
         Assertions.assertThat(receiptItem.equals(receiptItem5)).isEqualTo(true);
 
+        Assertions.assertThat(receiptItem.equals(apples)).isEqualTo(false);
+
     }
 
     @Test
