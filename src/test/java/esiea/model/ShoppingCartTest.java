@@ -36,6 +36,22 @@ public void handleOffersTwoForAmountTest()
                 Assertions.assertThat(x.getDiscountAmount()).isEqualTo(8.0);
         }
 }
+
+@Test
+public void handleOffersTwoForAmountLowQuantityTest()
+{
+        ShoppingCart shoppingCart = new ShoppingCart();
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        shoppingCart.addItemQuantity(apples, 1.0);
+        Map<Product, Offer> offers = new HashMap<>();
+        Offer offer = new Offer(SpecialOfferType.TwoForAmount, apples, 6.0);
+        offers.put(apples, offer);
+        Receipt receipt = new Receipt();
+        SupermarketCatalog catalog = new FakeCatalog();
+        catalog.addProduct(apples, 5.0);
+        shoppingCart.handleOffers(receipt, offers, catalog);
+        Assertions.assertThat(receipt.getDiscounts().size()).isEqualTo(0);
+}
 @Test
 public void handleOffersThreeForTwoTest()
 {
@@ -54,6 +70,22 @@ public void handleOffersThreeForTwoTest()
                 Assertions.assertThat(x.getDiscountAmount()).isEqualTo(10.0);
         }
 }
+@Test
+public void handleOffersThreeForTwoLowQuantityTest()
+{
+        ShoppingCart shoppingCart = new ShoppingCart();
+        Product apples = new Product("apples", ProductUnit.Kilo);
+        shoppingCart.addItemQuantity(apples, 2.0);
+        Map<Product, Offer> offers = new HashMap<>();
+        Offer offer = new Offer(SpecialOfferType.ThreeForTwo, apples, 6.0);
+        offers.put(apples, offer);
+        Receipt receipt = new Receipt();
+        SupermarketCatalog catalog = new FakeCatalog();
+        catalog.addProduct(apples, 5.0);
+        shoppingCart.handleOffers(receipt, offers, catalog);
+        Assertions.assertThat(receipt.getDiscounts().size()).isEqualTo(0);
+}
+
 
 @Test
 public void handleOffersFiveForAmountTwoTest()
