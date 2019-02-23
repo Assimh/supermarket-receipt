@@ -48,6 +48,7 @@ public class ReceiptItemTest {
         ReceiptItem receiptItem3 = new ReceiptItem(apples, 2.0, 2.99, 3.98);
         ReceiptItem receiptItem4 = new ReceiptItem(apples, 2.0, 1.99, 4.98);
         ReceiptItem receiptItem5 = new ReceiptItem(apples, 2.0, 1.99, 3.98);
+        ReceiptItem receiptItem6 = new ReceiptItem(toothbrush, 2.0, 1.99, 3.98);
 
         Assertions.assertThat(receiptItem.equals(receiptItem)).isEqualTo(true);
         Assertions.assertThat(receiptItem).isNotEqualTo(null);
@@ -56,6 +57,7 @@ public class ReceiptItemTest {
         Assertions.assertThat(receiptItem.equals(receiptItem3)).isEqualTo(false);
         Assertions.assertThat(receiptItem.equals(receiptItem4)).isEqualTo(false);
         Assertions.assertThat(receiptItem.equals(receiptItem5)).isEqualTo(true);
+        Assertions.assertThat(receiptItem.equals(receiptItem6)).isEqualTo(false);
 
         Assertions.assertThat(receiptItem.equals(apples)).isEqualTo(false);
 
