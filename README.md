@@ -12,3 +12,6 @@ Tameem HASSAMBRAY
 [![Build Status](https://travis-ci.org/Assimh/supermarket-receipt.svg?branch=master)](https://travis-ci.org/Assimh/supermarket-receipt)
 
 [![codecov](https://codecov.io/gh/Assimh/supermarket-receipt/branch/master/graph/badge.svg)](https://codecov.io/gh/Assimh/supermarket-receipt)
+
+TP1 : Done
+TP2 : Done
